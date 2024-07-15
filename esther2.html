@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Strength Result</title>
+</head>
+<body>
+    <h1>Password Strength Result</h1>
+    <p>Score: {{ score }} (0=weak, 4=strong)</p>
+    <p>Feedback:</p>
+    <ul>
+        {% for suggestion in feedback['suggestions'] %}
+            <li>{{ suggestion }}</li>
+        {% endfor %}
+    </ul>
+    {% if suggestions %}
+    <h2>Suggestions for a Stronger Password:</h2>
+    <p>Enhanced Password: {{ suggestions[0] }}</p>
+    {% endif %}
+    <h2>Examples of Strong Passwords:</h2>
+    <ul>
+        {% for password in strong_passwords %}
+            <li>{{ password }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/">Check another password</a>
+</body>
+</html>
+
+
+
+ 
